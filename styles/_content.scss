@@ -1,0 +1,53 @@
+@import "_variables.scss";
+
+
+
+.content {
+    display: block;
+    width: $full;
+    height: auto;
+    #vehicles{
+        display: block;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-top: 25vh;//brings item below nav bar
+            margin: auto;
+            min-width: auto;
+            min-height: 85%;
+            
+        }
+    }
+
+    #vehicles,
+    #why-mazda,
+    #journey,
+    #whats-new {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        p {
+            padding-top: 15vh;  //brings item below nav bar
+            color: black;
+        }
+
+        }
+        #journey #video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            min-width: 100%;
+            min-height: auto;
+            z-index: 20000000;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+    }

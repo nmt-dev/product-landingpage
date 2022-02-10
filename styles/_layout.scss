@@ -1,0 +1,15 @@
+@import "_variables.scss";
+
+html, body, a{
+    font-family: $font-stack;
+    text-decoration: none;
+    color: snow;
+background-color: black;
+overflow-x: hidden;
+}
+
+/*hidden scrollbar*/
+
+body::-webkit-scrollbar {
+    width: 0;
+  }

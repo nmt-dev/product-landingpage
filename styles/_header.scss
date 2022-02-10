@@ -1,0 +1,102 @@
+@import "_variables.scss";
+
+.header {
+    background-color: black;
+    position: fixed;
+    z-index: $nav-index;
+    width: $full;
+    height: 15%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "logo top"
+        "logo bottom";
+    align-items: center;
+
+
+
+    .logo {
+        grid-area: logo;
+        display: flex;
+        justify-content: right;
+
+        #header-img {
+            width: 5vw;
+            height: auto;
+
+        }
+    }
+
+
+    #nav-bar,
+    #nav-bar1 {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: flex;
+
+    }
+
+
+    #nav-bar {
+        padding-bottom: 10px;
+        padding-top: 10px;
+        grid-area: top;
+        justify-content: right;
+        border-bottom: 2px solid #e71837;
+
+
+
+        a {
+            padding-left: 2%;
+            font-size: small;
+            font-weight: 200;
+            color: whitesmoke;
+            opacity: 0.5;
+
+        }
+
+        a svg {
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform .2s;
+        }
+
+        a:hover,
+        svg:hover {
+            transform: scale(1.2);
+            background-color: transparent;
+            opacity: 1;
+        }
+
+    }
+
+    #nav-bar1 {
+        grid-area: bottom;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a:hover,
+        svg:hover {
+            transform: scale(1.2);
+            background-color: transparent;
+            opacity: 0.5;
+        }
+        #nav-buttons{
+            display: flex;
+            justify-content: center;
+
+            #offers{
+                margin-right: 30px;
+            }
+
+        button svg {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+
+
+    }
+}
