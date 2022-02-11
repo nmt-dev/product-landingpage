@@ -1,10 +1,10 @@
 @import "_variables.scss";
 
 html, body, a{
+    display: block;
     font-family: $font-stack;
     text-decoration: none;
     color: snow;
-background-color: black;
 overflow-x: hidden;
 }
 

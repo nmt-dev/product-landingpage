@@ -1,32 +1,18 @@
 @import "_variables.scss";
 
 .header {
-    background-color: black;
+    background-color: transparent;
     position: fixed;
     z-index: $nav-index;
     width: $full;
-    height: 15%;
+    height: 12vh;
     display: grid;
-    grid-template-columns: 1fr 8fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
     grid-template-areas:
-        "logo top"
-        "logo bottom";
+        "top"
+        "bottom";
     align-items: center;
-
-
-
-    .logo {
-        grid-area: logo;
-        display: flex;
-        justify-content: right;
-
-        #header-img {
-            width: 5vw;
-            height: auto;
-
-        }
-    }
 
 
     #nav-bar,
@@ -34,35 +20,31 @@
         margin-left: 5%;
         margin-right: 5%;
         display: flex;
-
     }
 
 
     #nav-bar {
-        padding-bottom: 10px;
-        padding-top: 10px;
-        grid-area: top;
+        grid-area: bottom;
+        align-self: start;
         justify-content: right;
-        border-bottom: 2px solid #e71837;
-
+        align-self: stretch;
 
 
         a {
-            padding-left: 2%;
-            font-size: small;
+            font-size: large;
             font-weight: 200;
             color: whitesmoke;
             opacity: 0.5;
+            padding-left: 1vw;
+            padding-right: 1vw;
 
         }
 
         a svg {
             display: inline-block;
-            vertical-align: middle;
-            transition: transform .2s;
+            vertical-align: top;
         }
 
-        a:hover,
         svg:hover {
             transform: scale(1.2);
             background-color: transparent;
@@ -72,31 +54,34 @@
     }
 
     #nav-bar1 {
-        grid-area: bottom;
-        justify-content: space-evenly;
-        align-items: center;
+        grid-area: top;
+        justify-content: right;
+        border-bottom: 2px solid #e71837;
+
+        a {
+            font-size: small;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            font-weight: 200;
+            color: whitesmoke;
+            opacity: 0.5;
+
+        }
+
+        a svg {
+            display: inline-block;
+            vertical-align: bottom;
+        }
 
         a:hover,
         svg:hover {
             transform: scale(1.2);
             background-color: transparent;
-            opacity: 0.5;
-        }
-        #nav-buttons{
-            display: flex;
-            justify-content: center;
-
-            #offers{
-                margin-right: 30px;
-            }
-
-        button svg {
-            display: inline-block;
-            vertical-align: middle;
+            opacity: 1;
         }
     }
 
 
 
-    }
+
 }

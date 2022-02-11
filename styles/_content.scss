@@ -6,19 +6,37 @@
     display: block;
     width: $full;
     height: auto;
-    #vehicles{
-        display: block;
-        img{
-            position: absolute;
-            top: 0;
-            left: 0;
+
+
+
+    #vehicles {
+        #myVideo {
+            position: fixed;
             right: 0;
             bottom: 0;
-            padding-top: 25vh;//brings item below nav bar
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        #th, #red, #white {
+            position: absolute;
+            height: 75vh;
+            width: 23vw;
+            width: 50vw;
+            height: auto;
             margin: auto;
-            min-width: auto;
-            min-height: 85%;
-            
+
+        }
+
+        #form {
+            position: absolute;
+            overflow: hidden;
+            height: 75vh;
+            width: 23vw;
+            top: 20vh;
+            right: 10vw;
+            border-radius: 1.5vw;
+            /* From https://css.glass */
         }
     }
 
@@ -29,25 +47,27 @@
         position: relative;
         width: 100vw;
         height: 100vh;
+
         p {
-            padding-top: 15vh;  //brings item below nav bar
+            padding-top: 15vh; //brings item below nav bar
             color: black;
         }
 
-        }
-        #journey #video{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            min-width: 100%;
-            min-height: auto;
-            z-index: 20000000;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -o-transition: all 1s;
-            transition: all 1s;
-        }
     }
+
+    #journey #video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        min-width: 100%;
+        min-height: auto;
+        z-index: 20000000;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s;
+    }
+}

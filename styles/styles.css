@@ -61,10 +61,10 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 html, body, a {
+  display: block;
   font-family: "Oswald", sans-serif;
   text-decoration: none;
   color: snow;
-  background-color: black;
   overflow-x: hidden;
 }
 
@@ -74,25 +74,16 @@ body::-webkit-scrollbar {
 }
 
 .header {
-  background-color: black;
+  background-color: transparent;
   position: fixed;
   z-index: 10000;
   width: 100%;
-  height: 15%;
+  height: 12vh;
   display: grid;
-  grid-template-columns: 1fr 8fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "logo top" "logo bottom";
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  grid-template-areas: "top" "bottom";
   align-items: center;
-}
-.header .logo {
-  grid-area: logo;
-  display: flex;
-  justify-content: right;
-}
-.header .logo #header-img {
-  width: 5vw;
-  height: auto;
 }
 .header #nav-bar,
 .header #nav-bar1 {
@@ -101,51 +92,50 @@ body::-webkit-scrollbar {
   display: flex;
 }
 .header #nav-bar {
-  padding-bottom: 10px;
-  padding-top: 10px;
-  grid-area: top;
+  grid-area: bottom;
+  align-self: start;
   justify-content: right;
-  border-bottom: 2px solid #e71837;
+  align-self: stretch;
 }
 .header #nav-bar a {
-  padding-left: 2%;
-  font-size: small;
+  font-size: large;
   font-weight: 200;
   color: whitesmoke;
   opacity: 0.5;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 .header #nav-bar a svg {
   display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.2s;
+  vertical-align: top;
 }
-.header #nav-bar a:hover,
 .header #nav-bar svg:hover {
   transform: scale(1.2);
   background-color: transparent;
   opacity: 1;
 }
 .header #nav-bar1 {
-  grid-area: bottom;
-  justify-content: space-evenly;
-  align-items: center;
+  grid-area: top;
+  justify-content: right;
+  border-bottom: 2px solid #e71837;
+}
+.header #nav-bar1 a {
+  font-size: small;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  font-weight: 200;
+  color: whitesmoke;
+  opacity: 0.5;
+}
+.header #nav-bar1 a svg {
+  display: inline-block;
+  vertical-align: bottom;
 }
 .header #nav-bar1 a:hover,
 .header #nav-bar1 svg:hover {
   transform: scale(1.2);
   background-color: transparent;
-  opacity: 0.5;
-}
-.header #nav-bar1 #nav-buttons {
-  display: flex;
-  justify-content: center;
-}
-.header #nav-bar1 #nav-buttons #offers {
-  margin-right: 30px;
-}
-.header #nav-bar1 #nav-buttons button svg {
-  display: inline-block;
-  vertical-align: middle;
+  opacity: 1;
 }
 
 .content {
@@ -153,19 +143,30 @@ body::-webkit-scrollbar {
   width: 100%;
   height: auto;
 }
-.content #vehicles {
-  display: block;
-}
-.content #vehicles img {
-  position: absolute;
-  top: 0;
-  left: 0;
+.content #vehicles #myVideo {
+  position: fixed;
   right: 0;
   bottom: 0;
-  padding-top: 25vh;
+  min-width: 100%;
+  min-height: 100%;
+}
+.content #vehicles #th, .content #vehicles #red, .content #vehicles #white {
+  position: absolute;
+  height: 75vh;
+  width: 23vw;
+  width: 50vw;
+  height: auto;
   margin: auto;
-  min-width: auto;
-  min-height: 85%;
+}
+.content #vehicles #form {
+  position: absolute;
+  overflow: hidden;
+  height: 75vh;
+  width: 23vw;
+  top: 20vh;
+  right: 10vw;
+  border-radius: 1.5vw;
+  /* From https://css.glass */
 }
 .content #vehicles,
 .content #why-mazda,
