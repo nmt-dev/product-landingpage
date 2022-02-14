@@ -1,0 +1,61 @@
+@media all and (max-width: 480px) {
+    * {background-color: black;}
+    .tagline{display: none;
+    }
+    #vehicles{
+        display: flex;
+        justify-content: center;
+    }
+    #form-container {
+        float: left;
+    }
+    
+    .m, .cube-wrap, .cube, img {display: none;} 
+
+
+    .specssection {
+        width: 100%;
+    z-index: 2;}
+
+}
+
+@media all and (max-width: 768px) {
+    * {background-color: black;}
+    .tagline{display: none;
+    }
+    #vehicles{
+        display: flex;
+        justify-content: center;
+    }
+    #form-container {
+        float: left;
+    }
+    
+    .m, .cube-wrap, .cube, img {display: none;} 
+
+
+    .specssection {
+        width: 100%;
+    z-index: 2;}
+}
+
+@media all and (max-width: 1024px) and (max-width: 768px) and (max-width: 480px)  {
+    * {background-color: black;}
+    .tagline{display: none;
+    }
+    #vehicles{
+        display: flex;
+        justify-content: center;
+    }
+    #form-container {
+        float: left;
+    }
+
+    .m, .cube-wrap, .cube, img {display: none;} 
+
+ 
+    .specssection {
+        width: 100%;
+    z-index: 2;}
+}
+

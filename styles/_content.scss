@@ -1,73 +1,576 @@
 @import "_variables.scss";
 
-
-
 .content {
     display: block;
     width: $full;
-    height: auto;
+    height: $full;
 
-
-
-    #vehicles {
-        #myVideo {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-        }
-        
-        #th, #red, #white {
-            position: absolute;
-            height: 75vh;
-            width: 23vw;
-            width: 50vw;
-            height: auto;
-            margin: auto;
-
-        }
-
-        #form {
-            position: absolute;
-            overflow: hidden;
-            height: 75vh;
-            width: 23vw;
-            top: 20vh;
-            right: 10vw;
-            border-radius: 1.5vw;
-            /* From https://css.glass */
-        }
-    }
-
-    #vehicles,
-    #why-mazda,
-    #journey,
-    #whats-new {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-
-        p {
-            padding-top: 15vh; //brings item below nav bar
-            color: black;
-        }
-
-    }
-
-    #journey #video {
+    #myVideo {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
-        min-width: 100%;
-        min-height: auto;
-        z-index: 20000000;
         -webkit-transition: all 1s;
         -moz-transition: all 1s;
         -o-transition: all 1s;
         transition: all 1s;
+        transform: scale(1.3);
+
+    }
+
+    #vehicles,
+    #why-mazda,
+    #dealers,
+    #tour {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    #vehicles {
+        #form-container {
+            width: 350px;
+            height: 500px;
+            background: inherit;
+            position: absolute;
+            overflow: hidden;
+            top: 15%;
+            right: 5%;
+            border-radius: 8px;
+
+            #form {
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                img {
+                    width: 10vw;
+                    height: auto;
+                    border-radius: 100%;
+                    margin: auto;
+                }
+
+                option {
+                    color: gray;
+
+                }
+
+                input,
+                select {
+                    background: 0;
+                    width: 200px;
+                    outline: 0;
+                    border: 0;
+                    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+                    margin: 20px 0;
+                    padding-bottom: 10px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: rgba(255, 255, 255, 0.8);
+                }
+
+                input[type="submit"] {
+                    border: 0;
+                    border-radius: 8px;
+                    padding-bottom: 0;
+                    height: 60px;
+                    background: #e71837;
+                    opacity: 0.8;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 200ms ease-in-out;
+                }
+
+                input[type="submit"]:hover {
+                    transform: scale(1.1);
+                    opacity: 1;
+                    background: #e71837;
+                }
+            }
+
+        }
+
+        #form-container::before {
+            width: 400px;
+            height: 550px;
+            content: "";
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            bottom: 0;
+            right: 0;
+            background: inherit;
+            box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
+            filter: blur(10px);
+        }
+
+        .tagline {
+            text-align: center;
+            color: whitesmoke;
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            font-size: 50px;
+            padding-top: 40vh;
+            padding-right: 50vw;
+            height: 50vh;
+            width: auto;
+            overflow: hidden;
+
+
+            .head-tag,
+            .tag {
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .head-tag {
+                animation: showup 10s forwards;
+            }
+
+            .tag {
+                width: 0px;
+                animation: reveal 10s forwards;
+                background-color: rgba(231, 024, 055, 0.8);
+
+                span {
+                    margin-left: -355px;
+                    animation: slidein 10s forwards;
+
+                }
+            }
+        }
+
+    }
+
+    #why-mazda {
+        background-color: black;
+        display: flex;
+        overflow: hidden;
+
+        #specssection {
+            position: relative;
+            top: 10%;
+            left: 5%;
+            width: 100%;
+
+            .collapsible {
+                background-color: black;
+                color: snow;
+                cursor: pointer;
+                padding: 18px;
+                width: 50%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+
+            .active,
+            .collapsible:hover {
+                background-color: #555;
+            }
+
+            .collapsible:after {
+                content: '\02795';
+                /* Unicode character for "plus" sign (+) */
+                font-size: 13px;
+                color: white;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .active:after {
+                content: "\2796";
+                /* Unicode character for "minus" sign (-) */
+            }
+
+
+            .specs2 {
+                display: none;
+                overflow: hidden;
+                background-color: transparent;
+                width: 47.6%;
+                grid-template-columns: 6fr 2fr;
+                justify-items: stretch;
+                justify-content: stretch;
+            }
+
+            dd,
+            dt {
+                background-color: #e71837;
+                padding: 10px;
+            }
+
+            .light {
+                background-color: #ee4f67;
+            }
+
+            dt {
+                border-left: 2px solid black;
+            }
+
+        }
+
+        .m {
+            display: block;
+            width: 232px;
+            height: 500px;
+            position: relative;
+            float: right;
+            padding: 0 30px 0 40px;
+            margin-top: 70px;
+        }
+
+        .m .li {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index: 1000;
+            float: left;
+            margin: 0 10px 10px 0;
+            border: solid 3px black;
+            background-color: black;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .m .li:focus img {
+            opacity: .3;
+        }
+
+        .m .li>img {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            position: absolute;
+            left: 0;
+            top: 10%;
+            transition: .3s;
+        }
+
+        .cube-wrap {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 10%;
+            right: 100%;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) translateZ(-250px);
+            transition: 2s 9999999s;
+        }
+
+        .cube div {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #222;
+        }
+
+        .cube .front {
+            transform: rotateY(0deg) translateZ(250px);
+        }
+
+        .cube .back {
+            transform: rotateX(180deg) translateZ(250px);
+        }
+
+        .cube .right {
+            transform: rotateY(90deg) translateZ(250px);
+        }
+
+        .cube .left {
+            transform: rotateY(-90deg) translateZ(250px);
+        }
+
+        .cube .top {
+            transform: rotateX(90deg) translateZ(250px);
+        }
+
+        .cube .bottom {
+            transform: rotateX(-90deg) translateZ(250px);
+        }
+
+        .cube img {
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .li:focus~.cube-wrap .cube {
+            transition: 1.2s;
+        }
+
+        .m1:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateY(0deg);
+        }
+
+        .m2:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateY(-90deg);
+        }
+
+        .m3:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateX(-90deg);
+        }
+
+        .m4:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateY(90deg);
+        }
+
+        .m5:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateX(90deg);
+        }
+
+        .m6:focus~.cube-wrap .cube {
+            transform: translateZ(-250px) rotateX(180deg);
+        }
+
+        #cta {
+            position: absolute;
+            bottom: 5%;
+            right: 22%;
+
+            a {
+                background: 0;
+                text-align: center;
+                padding-top: 8%;
+                width: 200px;
+                outline: 0;
+                border: 0;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+                margin: 20px 0;
+                padding-bottom: 10px;
+                font-size: 18px;
+                font-weight: bold;
+                color: rgba(255, 255, 255, 0.8);
+                border: 0;
+                border-radius: 8px;
+                padding-bottom: 0;
+                height: 60px;
+                background: #e71837;
+                opacity: 0.8;
+                color: white;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+            }
+
+            a:hover {
+                transform: scale(1.1);
+                opacity: 1;
+                background: #e71837;
+            }
+
+        }
+    }
+
+    #dealers {
+        background-image: url("https://unbox.ph/wp-content/uploads/2022/01/A4.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: lighten;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr;
+        justify-content: stretch;
+        align-items: stretch;
+
+
+        .alllocation {
+            position: relative;
+            text-align: right;
+            top: 25%;
+            padding-right: 5%;
+            font-size: larger;
+
+            li {
+                list-style-type: none;
+                padding: 3%;
+                border-bottom: 1px solid whitesmoke;
+            }
+
+            li:hover {
+                color: #e71837;
+                transform: scale(1.2);
+                cursor: pointer;
+
+            }
+        }
+
+        .ncrcontainer {
+            display: grid;
+            padding: 5%;
+            padding-top: 8%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            justify-content: stretch;
+            align-items: stretch;
+            text-align: center;
+
+
+
+            .ncr {
+                margin: auto;
+
+                h1 {
+                    color: #e71837;
+                }
+
+                a {
+                    color: white;
+                    opacity: 0.5;
+                }
+
+                a:hover {
+                    color: gray;
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+
+
+            }
+
+        }
+    }
+
+    #tour {
+        position: relative;
+        padding-top: 10vh;
+        background-color: black;
+        margin: 0;
+
+        .rowsss {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 0 4px;
+
+            .columnsss {
+                -ms-flex: 25%;
+                flex: 25%;
+                max-width: 25%;
+                padding: 0 4px;
+
+                .tourimages {
+                    margin-top: 8px;
+                    vertical-align: middle;
+                    width: 100%;
+                }
+
+                .tourimages:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+    }
+
+    //keyframes
+    @keyframes showup {
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slidein {
+        0% {
+            margin-left: -200px;
+        }
+
+        20% {
+            margin-left: -200px;
+        }
+
+        35% {
+            margin-left: 0px;
+        }
+
+        100% {
+            margin-left: 0px;
+        }
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            width: 0px;
+        }
+
+        20% {
+            opacity: 1;
+            width: 0px;
+        }
+
+        30% {
+            width: 350px;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+            width: 350px;
+        }
+
     }
 }
